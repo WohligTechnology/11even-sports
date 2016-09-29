@@ -1,0 +1,359 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "../bower_components/flexslider/flexslider.css";
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
+@import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/swiper/dist/css/swiper.min.css";
+@import "../bower_components/smart-app-banner/smart-app-banner.css";
+@import "icons";
+
+/* Bootstrap Variables Goes Here */
+
+$brand-primary: #0d9dff !default;
+$brand-success: #84ce3c !default;
+$brand-warning: #ffec39 !default;
+$brand-danger: #fc483f !default;
+$brand-info: #000072 !default;
+$font-red:#f5353e !default;
+$font-black: #121212 !default;
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+    // padding-top: 70px;
+}
+
+img.loading {
+    text-align: center;
+    opacity: 1;
+    width: 32px !important;
+    height: auto;
+}
+
+img {
+    opacity: 0;
+    @include transition(all 300ms ease);
+}
+
+img.doneLoading {
+    opacity: 1;
+}
+
+nav li:hover .dropdown-menu {
+    display: block;
+}
+
+#map img {
+    opacity: 1;
+}
+
+a,
+.btn,
+[ui-sref] {
+    cursor: pointer;
+    @include transition(all ease 300ms);
+}
+
+footer {
+    // font-size: 12px;
+    // background-color: #eee;
+    // padding: 10px 0;
+    // p {
+    //     margin: 0;
+    // }
+    padding: 25px 0 40px 0;
+    background-color: #000;
+    color: #ccc;
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        h5 {
+            font-size: 15px;
+        }
+    }
+    .sign-up {
+        text-align: right;
+    }
+    .email-feed {
+        input {
+            background-color: #232426;
+            border: none;
+        }
+        span {
+            background-color: #6B6B6B;
+            border: none;
+            color: #fff;
+        }
+    }
+    .social-icons {
+        margin: 20px 0 10px 0;
+        i {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+    }
+    .copy-right {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+}
+
+//bootstrap forms
+.input-lg,
+.input-group-lg>.form-control,
+.input-group-lg>.input-group-addon,
+.input-group-lg>.input-group-btn>.btn,
+.btn,
+.form-control {
+    border-radius: 0;
+    @include box-shadow(none);
+}
+
+.form-control:focus {
+    border-color: $brand-primary;
+    outline: 0;
+    @include box-shadow(none);
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-invalid {
+    color: $brand-danger;
+    .form-control {
+        border-color: $brand-danger;
+        color: $brand-danger;
+        &::-webkit-input-placeholder {
+            color: $brand-danger;
+        }
+    }
+}
+
+.form-submission {
+    min-height: 300px;
+}
+
+//FLEX SLIDER FIXES
+.flex-direction-nav {
+    a {
+        height: auto;
+    }
+    .flex-prev {
+        left: 10px !important;
+    }
+    .flex-next {
+        right: 10px !important;
+    }
+}
+
+//SWIPER CSS
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: url(../img/prev.png);
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/next.png);
+}
+
+
+/* Start writing sass here */
+
+.content {
+    min-height: 450px;
+}
+
+.full-img {
+    width: 100%;
+    display: block;
+}
+
+.font-red {
+    font-weight: bold;
+    color: $font-red;
+}
+
+// -------this css is for header----------
+header {
+    .main-head {
+        background-image: url('../img/header-img.png');
+        background-size: cover;
+        border-bottom: 2px solid #f5353e;
+        ;
+        .logo-img {
+            float: left;
+            height: 190px;
+            width: 190px;
+            img {}
+        }
+        .right-head {
+            display: inline-block;
+        }
+        .logo-title {
+            display: inline-block;
+            .head-red {
+                color: #f5353e;
+                font-weight: bold;
+            }
+        }
+        .right-logo {
+            float: right;
+        }
+        .navigation {
+            font-size: 16px;
+            color: #3e4042;
+            bottom: 0;
+            position: absolute;
+            ul {
+                list-style-type: none;
+                padding-left: 20px;
+                margin-bottom: 5px;
+            }
+            li {
+                display: inline;
+            }
+            li+li {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.row-flex {
+    @include display(flex);
+}
+
+.col-flex {
+    @include flex(1);
+    position: relative;
+    margin: 2px;
+}
+
+// -----------this css id for home page--------------
+.home {
+    .banner {
+        background-image: url('../img/banner.png');
+        background-size: cover;
+        padding-top: 18%;
+        h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 48px;
+        }
+        .title-1 {
+            color: #fff;
+        }
+        .title-2 {
+            color: $font-red;
+            font-weight: bold;
+        }
+        .knw-more {
+            text-align: center;
+            margin-bottom: 7%;
+        }
+        button {
+            padding: 8px 30px;
+            opacity: 0.9;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+        .upto-date {
+            background-color: $font-red;
+            padding: 18px 0;
+            input {
+                background-color: transparent;
+                width: 90%;
+                border: none;
+                color: #fff;
+            }
+            .input-group {
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+    .tournament {
+        background-image: url('../img/middle-bg.png');
+        background-position: 100%;
+        height: 1825px;
+        .big-cards {
+            padding: 0 50px;
+            .col-md-3 {
+                padding: 0;
+            }
+        }
+        .big-card-img {
+            position: relative;
+            .img-title {
+                position: absolute;
+                bottom: 40px;
+                left: 30px;
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+            .plus {
+                position: absolute;
+                bottom: 40px;
+                right: 0;
+                background-color: $font-red;
+                padding: 12px;
+                cursor: pointer;
+            }
+        }
+        .quotes {
+            text-align: center;
+            padding: 70px 0;
+            h3 {
+                margin: 0;
+                font-size: 26px;
+            }
+            .quote-img {
+                margin-bottom: 25px;
+                img {
+                    height: 32px;
+                }
+            }
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .card {
+                margin: 1px;
+                height: 232px;
+                width: 232px;
+            }
+        }
+        .view-all {
+            padding: 25px 0;
+            text-align: center;
+            button {
+                padding: 8px 30px;
+                opacity: 0.9;
+                border-radius: 20px;
+                margin-top: 20px;
+                font-size: 16px;
+                text-align: center;
+                outline: none;
+            }
+        }
+        .about-us {
+            h1 {
+                color: #fff;
+                font-size: 48px;
+            }
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+@import "fancybox-override";
+@import "mobile";
