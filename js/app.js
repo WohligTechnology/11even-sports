@@ -18,6 +18,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
             templateUrl: "views/template.html",
             controller: 'HomeCtrl'
         })
+        .state('school-tournament', {
+            url: "/school-tournament",
+            templateUrl: "views/template.html",
+            controller: 'SchoolTournamentCtrl'
+        })
+        .state('contact-us', {
+            url: "/contact-us",
+            templateUrl: "views/template.html",
+            controller: 'ContactUsCtrl'
+        })
+        .state('media', {
+            url: "/media",
+            templateUrl: "views/template.html",
+            controller: 'MediaCtrl'
+        })
         .state('form', {
             url: "/form",
             templateUrl: "views/template.html",

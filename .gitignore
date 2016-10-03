@@ -13,3 +13,5 @@ img2/
 nbproject
 .idea
 .node_history
+*.psd
+res/

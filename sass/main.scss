@@ -1,359 +1,683 @@
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-@import "../bower_components/flexslider/flexslider.css";
-@import "../bower_components/font-awesome/css/font-awesome.min.css";
-@import "../bower_components/fancyBox/source/jquery.fancybox.css";
-@import "../bower_components/swiper/dist/css/swiper.min.css";
-@import "../bower_components/smart-app-banner/smart-app-banner.css";
-@import "icons";
-
-/* Bootstrap Variables Goes Here */
-
-$brand-primary: #0d9dff !default;
-$brand-success: #84ce3c !default;
-$brand-warning: #ffec39 !default;
-$brand-danger: #fc483f !default;
-$brand-info: #000072 !default;
-$font-red:#f5353e !default;
-$font-black: #121212 !default;
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-body {
-    // padding-top: 70px;
-}
-
-img.loading {
-    text-align: center;
-    opacity: 1;
-    width: 32px !important;
-    height: auto;
-}
-
-img {
-    opacity: 0;
-    @include transition(all 300ms ease);
-}
-
-img.doneLoading {
-    opacity: 1;
-}
-
-nav li:hover .dropdown-menu {
-    display: block;
-}
-
-#map img {
-    opacity: 1;
-}
-
-a,
-.btn,
-[ui-sref] {
-    cursor: pointer;
-    @include transition(all ease 300ms);
-}
-
-footer {
-    // font-size: 12px;
-    // background-color: #eee;
-    // padding: 10px 0;
-    // p {
-    //     margin: 0;
-    // }
-    padding: 25px 0 40px 0;
-    background-color: #000;
-    color: #ccc;
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-        h5 {
-            font-size: 15px;
+        @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+        @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+        @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+        @import "../bower_components/flexslider/flexslider.css";
+        @import "../bower_components/font-awesome/css/font-awesome.min.css";
+        @import "../bower_components/fancyBox/source/jquery.fancybox.css";
+        @import "../bower_components/swiper/dist/css/swiper.min.css";
+        @import "../bower_components/smart-app-banner/smart-app-banner.css";
+        @import "icons";
+        @import 'https://fonts.googleapis.com/css?family=Rubik';
+        /* Bootstrap Variables Goes Here */
+        
+        $brand-primary: #0d9dff !default;
+        $brand-success: #84ce3c !default;
+        $brand-warning: #ffec39 !default;
+        $brand-danger: #fc483f !default;
+        $brand-info: #000072 !default;
+        $font-red:#f5353e !default;
+        $font-black: #121212 !default;
+        @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+        body {
+            // padding-top: 70px;
+            font-family: 'Rubik', sans-serif;
         }
-    }
-    .sign-up {
-        text-align: right;
-    }
-    .email-feed {
-        input {
-            background-color: #232426;
-            border: none;
-        }
-        span {
-            background-color: #6B6B6B;
-            border: none;
-            color: #fff;
-        }
-    }
-    .social-icons {
-        margin: 20px 0 10px 0;
-        i {
-            font-size: 24px;
-            margin-left: 20px;
-        }
-    }
-    .copy-right {
-        font-size: 12px;
-        margin-bottom: 0px;
-    }
-}
-
-//bootstrap forms
-.input-lg,
-.input-group-lg>.form-control,
-.input-group-lg>.input-group-addon,
-.input-group-lg>.input-group-btn>.btn,
-.btn,
-.form-control {
-    border-radius: 0;
-    @include box-shadow(none);
-}
-
-.form-control:focus {
-    border-color: $brand-primary;
-    outline: 0;
-    @include box-shadow(none);
-}
-
-.form-group {
-    position: relative;
-}
-
-.form-invalid {
-    color: $brand-danger;
-    .form-control {
-        border-color: $brand-danger;
-        color: $brand-danger;
-        &::-webkit-input-placeholder {
-            color: $brand-danger;
-        }
-    }
-}
-
-.form-submission {
-    min-height: 300px;
-}
-
-//FLEX SLIDER FIXES
-.flex-direction-nav {
-    a {
-        height: auto;
-    }
-    .flex-prev {
-        left: 10px !important;
-    }
-    .flex-next {
-        right: 10px !important;
-    }
-}
-
-//SWIPER CSS
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
-    background-image: url(../img/prev.png);
-}
-
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
-    background-image: url(../img/next.png);
-}
-
-
-/* Start writing sass here */
-
-.content {
-    min-height: 450px;
-}
-
-.full-img {
-    width: 100%;
-    display: block;
-}
-
-.font-red {
-    font-weight: bold;
-    color: $font-red;
-}
-
-// -------this css is for header----------
-header {
-    .main-head {
-        background-image: url('../img/header-img.png');
-        background-size: cover;
-        border-bottom: 2px solid #f5353e;
-        ;
-        .logo-img {
-            float: left;
-            height: 190px;
-            width: 190px;
-            img {}
-        }
-        .right-head {
-            display: inline-block;
-        }
-        .logo-title {
-            display: inline-block;
-            .head-red {
-                color: #f5353e;
-                font-weight: bold;
+        
+        a {
+            color: #838383;
+            ;
+            &:hover {
+                text-decoration: none;
+                color: #838383;
             }
         }
-        .right-logo {
-            float: right;
+        
+        img.loading {
+            text-align: center;
+            opacity: 1;
+            width: 32px !important;
+            height: auto;
         }
-        .navigation {
-            font-size: 16px;
-            color: #3e4042;
-            bottom: 0;
-            position: absolute;
+        
+        img {
+            opacity: 0;
+            @include transition(all 300ms ease);
+        }
+        
+        img.doneLoading {
+            opacity: 1;
+        }
+        
+        nav li:hover .dropdown-menu {
+            display: block;
+        }
+        
+        #map img {
+            opacity: 1;
+        }
+        
+        a,
+        .btn,
+        [ui-sref] {
+            cursor: pointer;
+            @include transition(all ease 300ms);
+        }
+        
+        footer {
+            // font-size: 12px;
+            // background-color: #eee;
+            // padding: 10px 0;
+            // p {
+            //     margin: 0;
+            // }
+            padding: 25px 0 40px 0;
+            background-color: #000;
+            color: #ccc;
             ul {
                 list-style-type: none;
-                padding-left: 20px;
-                margin-bottom: 5px;
+                padding-left: 0;
+                h5 {
+                    font-size: 15px;
+                    color: #cccccc;
+                }
             }
-            li {
-                display: inline;
+            .sign-up {
+                text-align: right;
             }
-            li+li {
-                margin-left: 15px;
+            .email-feed {
+                input {
+                    background-color: #232426;
+                    border: none;
+                }
+                span {
+                    background-color: #6B6B6B;
+                    border: none;
+                    color: #fff;
+                    cursor: pointer;
+                }
             }
-        }
-    }
-}
-
-.row-flex {
-    @include display(flex);
-}
-
-.col-flex {
-    @include flex(1);
-    position: relative;
-    margin: 2px;
-}
-
-// -----------this css id for home page--------------
-.home {
-    .banner {
-        background-image: url('../img/banner.png');
-        background-size: cover;
-        padding-top: 18%;
-        h1 {
-            margin: 0;
-            text-align: center;
-            font-size: 48px;
-        }
-        .title-1 {
-            color: #fff;
-        }
-        .title-2 {
-            color: $font-red;
-            font-weight: bold;
-        }
-        .knw-more {
-            text-align: center;
-            margin-bottom: 7%;
-        }
-        button {
-            padding: 8px 30px;
-            opacity: 0.9;
-            border-radius: 20px;
-            margin-top: 20px;
-            font-size: 16px;
-            text-align: center;
-            outline: none;
-        }
-        .upto-date {
-            background-color: $font-red;
-            padding: 18px 0;
-            input {
-                background-color: transparent;
-                width: 90%;
-                border: none;
-                color: #fff;
+            .social-icons {
+                margin: 20px 0 10px 0;
+                i {
+                    font-size: 24px;
+                    margin-left: 20px;
+                    cursor: pointer;
+                }
             }
-            .input-group {
-                border-bottom: 1px solid #ccc;
+            .copy-right {
+                font-size: 12px;
+                margin-bottom: 0px;
             }
         }
-    }
-    .tournament {
-        background-image: url('../img/middle-bg.png');
-        background-position: 100%;
-        height: 1825px;
-        .big-cards {
-            padding: 0 50px;
-            .col-md-3 {
-                padding: 0;
-            }
+        
+        //bootstrap forms
+        .input-lg,
+        .input-group-lg>.form-control,
+        .input-group-lg>.input-group-addon,
+        .input-group-lg>.input-group-btn>.btn,
+        .btn,
+        .form-control {
+            border-radius: 0;
+            @include box-shadow(none);
         }
-        .big-card-img {
+        
+        .form-control:focus {
+            border-color: $brand-primary;
+            outline: 0;
+            @include box-shadow(none);
+        }
+        
+        .form-group {
             position: relative;
-            .img-title {
-                position: absolute;
-                bottom: 40px;
-                left: 30px;
-                p {
-                    margin: 0;
+        }
+        
+        .form-invalid {
+            color: $brand-danger;
+            .form-control {
+                border-color: $brand-danger;
+                color: $brand-danger;
+                &::-webkit-input-placeholder {
+                    color: $brand-danger;
+                }
+            }
+        }
+        
+        .form-submission {
+            min-height: 300px;
+        }
+        
+        //FLEX SLIDER FIXES
+        .flex-direction-nav {
+            a {
+                height: auto;
+            }
+            .flex-prev {
+                left: 10px !important;
+            }
+            .flex-next {
+                right: 10px !important;
+            }
+        }
+        
+        //SWIPER CSS
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
+            background-image: url(../img/prev.png);
+        }
+        
+        .swiper-button-next,
+        .swiper-container-rtl .swiper-button-prev {
+            background-image: url(../img/next.png);
+        }
+        /* Start writing sass here */
+        
+        .content {
+            min-height: 450px;
+        }
+        
+        .full-img {
+            width: 100%;
+            display: block;
+        }
+        
+        .font-red {
+            font-weight: bold;
+            color: $font-red;
+        }
+        
+        // ------this is common css------
+        // -------this css is for header----------
+        header {
+            .main-head {
+                background-image: url('../img/header-img.png');
+                background-size: cover;
+                border-bottom: 2px solid #f5353e;
+                .logo-img {
+                    float: left;
+                    height: 190px;
+                    width: 190px;
+                    img {}
+                }
+                .right-head {
+                    display: inline-block;
+                }
+                .logo-title {
+                    display: block;
+                    margin: 30px 0 25px 20px;
+                    h1 {
+                        margin: 0;
+                        font-size: 50px;
+                    }
+                    .head-2 {
+                        color: #f5353e;
+                        font-weight: bold;
+                    }
+                }
+                // .right-logo {
+                //     float: right;
+                // }
+                .navigation {
                     font-size: 16px;
+                    color: #3e4042;
+                    bottom: 0;
+                    a {
+                        color: #000;
+                    }
+                    ul {
+                        list-style-type: none;
+                        padding-left: 20px;
+                        margin-bottom: 0;
+                    }
+                    li {
+                        display: inline;
+                    }
+                    li+li {
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+        
+        .row-flex {
+            @include display(flex);
+        }
+        
+        .col-flex {
+            @include flex(1);
+            position: relative;
+            margin: 2px;
+        }
+        
+        // -----------this css id for home page--------------
+        .home {
+            .banner {
+                background-image: url('../img/banner.jpg');
+                background-size: cover;
+                padding-top: 18%;
+                position: relative;
+                h1 {
+                    margin: 0;
+                    text-align: center;
+                    font-size: 48px;
+                }
+                .title-1 {
                     color: #fff;
                 }
+                .title-2 {
+                    color: $font-red;
+                    font-weight: bold;
+                }
+                .knw-more {
+                    text-align: center;
+                    margin-bottom: 7%;
+                }
+                button {
+                    padding: 8px 30px;
+                    opacity: 0.9;
+                    border-radius: 20px;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    text-align: center;
+                    outline: none;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                .black-bad {
+                    position: absolute;
+                    bottom: 32px;
+                    right: 165px;
+                    height: 200px;
+                    width: 350px;
+                }
+                .upto-date {
+                    background-color: $font-red;
+                    padding: 18px 0;
+                    .text-margin {
+                        margin: 10px 0;
+                        color: #fff;
+                    }
+                    input {
+                        background-color: transparent;
+                        width: 90%;
+                        border: none;
+                        color: #fff;
+                        &::-webkit-input-placeholder {
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                        &:-moz-placeholder {
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                        &::-moz-placeholder {
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                        &:-ms-input-placeholder {
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                    }
+                    .input-group {
+                        border-bottom: 1px solid #ccc;
+                        width: 100%;
+                    }
+                }
             }
-            .plus {
-                position: absolute;
-                bottom: 40px;
-                right: 0;
-                background-color: $font-red;
-                padding: 12px;
-                cursor: pointer;
+            .tournament {
+                background: #f0f0f0 url('../img/middle-bg.png');
+                background-position: 100%;
+                padding-bottom: 12%;
+                .big-cards {
+                    padding: 0 50px;
+                    .col-md-3 {
+                        padding: 0;
+                    }
+                }
+                .big-card-img {
+                    position: relative;
+                    .img-title {
+                        position: absolute;
+                        bottom: 40px;
+                        left: 30px;
+                        p {
+                            margin: 0;
+                            font-size: 16px;
+                            color: #fff;
+                        }
+                    }
+                    .plus {
+                        position: absolute;
+                        bottom: 40px;
+                        right: 0;
+                        background-color: $font-red;
+                        padding: 12px;
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+                .quotes {
+                    text-align: center;
+                    padding: 70px 0;
+                    h3 {
+                        margin: 0;
+                        font-size: 26px;
+                    }
+                    .quote-img {
+                        margin-bottom: 25px;
+                        img {
+                            height: 32px;
+                        }
+                    }
+                }
+                .view-all {
+                    padding: 25px 0;
+                    text-align: center;
+                    button {
+                        padding: 8px 30px;
+                        opacity: 0.9;
+                        border-radius: 20px;
+                        margin-top: 20px;
+                        font-size: 16px;
+                        text-align: center;
+                        outline: none;
+                    }
+                }
+                .about-us {
+                    h1 {
+                        color: #fff;
+                        font-size: 48px;
+                    }
+                    p {
+                        text-align: justify;
+                    }
+                }
             }
-        }
-        .quotes {
-            text-align: center;
-            padding: 70px 0;
-            h3 {
-                margin: 0;
-                font-size: 26px;
-            }
-            .quote-img {
-                margin-bottom: 25px;
-                img {
-                    height: 32px;
+            .social-media {
+                background-image: url('../img/red-white-bg.png');
+                background-size: cover;
+                padding: 70px 0 80px 0;
+                h1 {
+                    text-align: center;
+                    color: #fff;
+                    font-size: 48px;
+                    margin-top: 0;
+                    margin-bottom: 35px;
+                }
+                .social-icon {
+                    text-align: center;
+                    padding-bottom: 15px;
+                    i {
+                        padding: 10px;
+                        background-color: #fff;
+                        color: #CE2127;
+                        border-radius: 100%;
+                        font-size: 38px;
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
+                .social-card {
+                    border: 10px solid #ccc;
+                    overflow: hidden;
+                    height: 500px;
+                    iframe {
+                        html {
+                            body {
+                                .powered_by {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-        .image-grid {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            .card {
-                margin: 1px;
-                height: 232px;
-                width: 232px;
+        
+        // -----this css is for school-tournament--------
+        .school-tournament {
+            .banner {
+                background-image: url('../img/school/school-banner.png');
+                background-size: cover;
+                padding: 15% 0 16% 0;
+                h1 {
+                    color: #ffffff;
+                    margin: 0;
+                    font-size: 50px;
+                    text-align: center;
+                }
             }
-        }
-        .view-all {
-            padding: 25px 0;
-            text-align: center;
-            button {
-                padding: 8px 30px;
-                opacity: 0.9;
-                border-radius: 20px;
-                margin-top: 20px;
-                font-size: 16px;
+            .red-panel {
+                background-color: $font-red;
+                padding: 25px 0;
                 text-align: center;
-                outline: none;
+                h3 {
+                    color: #ffffff;
+                    margin: 0;
+                    font-size: 28px;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+                .tab-1 {
+                    padding-right: 34px;
+                    border-right: 4px solid #fff;
+                }
+                .tab-2 {
+                    padding-left: 30px;
+                }
+            }
+            .season-panel {
+                color: $font-red;
+                text-align: center;
+                padding: 40px 0;
+                h3 {
+                    font-weight: bold;
+                    font-size: 26px;
+                    margin: 0;
+                }
+                p {
+                    font-weight: bold;
+                    margin: 0;
+                }
+                .season {
+                    display: inline-block;
+                    padding: 0 30px;
+                }
+                .mid-season {
+                    border-left: 3px solid $font-red;
+                    border-right: 3px solid $font-red;
+                }
+            }
+            .state-flex {
+                // .state-list {
+                //     width: auto !important;
+                //     padding: 10px;
+                //     background-color: #D9D9D9;
+                // }
+                .state-btn {
+                    background-color: #D9D9D9;
+                    border: none;
+                    outline: none;
+                    width: 120px;
+                }
+                .flex-prev {
+                    &:before {
+                        font-size: 28px;
+                    }
+                }
+                .flex-next {
+                    &:before {
+                        font-size: 28px;
+                    }
+                }
+            }
+            .awards {
+                text-align: center;
+                .row {
+                    box-shadow: -10px 10px $font-red;
+                }
+                .col-md-3 {
+                    padding: 0;
+                }
+                .col-head {
+                    padding: 24px;
+                    border-left: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    background-color: #F0F0F0;
+                    &:last-child {
+                        padding: 26px;
+                    }
+                }
+                .row-head {
+                    padding: 15px;
+                    background-color: #555555;
+                    color: #fff;
+                    font-size: 22px;
+                    border-top: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+                .col-one {
+                    padding: 15px;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+                .col-two {
+                    padding: 15px;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+                .col-three {
+                    padding: 15px;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                }
+                .column-1 {
+                    background-image: url('../img/school/gold.png');
+                    background-size: cover;
+                }
+                .column-2 {
+                    background-image: url('../img/school/silver.png');
+                    background-size: cover;
+                }
+                .column-3 {
+                    background-image: url('../img/school/bronze.png');
+                    background-size: cover;
+                }
+            }
+            .small-cards {
+                margin-bottom: 70px;
+                .gallery-heading {
+                    text-align: center;
+                    color: $font-red;
+                    padding: 60px 0 30px 0;
+                    h1 {
+                        margin: 0;
+                    }
+                }
+                .img-holder {
+                    width: 224px;
+                }
             }
         }
-        .about-us {
-            h1 {
-                color: #fff;
-                font-size: 48px;
+        
+        // -------this css is for contact us---------
+        .contact-us {
+            .banner {
+                background-image: url('../img/school/school-banner.png');
+                background-size: cover;
+                padding: 15% 0 16% 0;
+                h1 {
+                    color: #ffffff;
+                    margin: 0;
+                    font-size: 50px;
+                    text-align: center;
+                }
             }
-            p {
-                text-align: justify;
+            .remove-pad {
+                padding: 0;
+            }
+            .addr {
+                background-image: url('../img/school/addr-bg.png');
+                background-size: cover;
+                background-position: 100%;
+                padding: 2% 10%;
+            }
+            .address {
+                h3 {
+                    color: $font-red;
+                    margin: 0;
+                }
+            }
+            .enquiry-form {
+                h1 {
+                    color: $font-red;
+                }
+                input {
+                    margin-bottom: 15px;
+                }
+                .queries {
+                    margin-bottom: 15px;
+                }
+                .enquiry-btn {
+                    text-align: right;
+                }
+                .btn {
+                    border: 0;
+                    border-radius: 20px;
+                    background-color: #242424;
+                    outline: none;
+                    color: #fff;
+                    padding: 6px 40px;
+                }
             }
         }
-    }
-}
-
-@import "fancybox-override";
-@import "mobile";
+        
+        // -------------this css is for media--------
+        .media {
+            .banner {
+                background-image: url('../img/media/media-banner.png');
+                background-size: cover;
+                padding: 15% 0 16% 0;
+                h1 {
+                    color: #ffffff;
+                    margin: 0;
+                    font-size: 50px;
+                    text-align: center;
+                }
+            }
+            .filter {
+                text-align: right;
+                margin: 50px 0 30px 0;
+                h3 {
+                    display: inline-block;
+                    color: $font-red;
+                    margin-top: 8px;
+                    margin-right: 10px;
+                    margin-bottom: 0;
+                }
+                .filter-box {
+                    border: 1px solid $font-red;
+                    padding: 5px;
+                    display: inline-block;
+                    select {
+                        -webkit-appearance: none;
+                        background-color: transparent;
+                        font-size: 22px;
+                        padding-right: 60px;
+                        border: none;
+                        outline: none;
+                    }
+                    img {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        
+        @import "fancybox-override";
+        @import "mobile";
